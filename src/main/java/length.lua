@@ -47,7 +47,7 @@ print("内容：" .. providers[1])
 
 print(type(providers) == "table")
 
-for i1 = 1, 10, 2 do
+for i1 = 1, 10, 2 do --从1到10，每次步长为2
     print("--")
 end
 
