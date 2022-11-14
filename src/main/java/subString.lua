@@ -28,5 +28,5 @@ print(i,j)
 local var1 = tonumber(w)
 print(var1) --nil
 
-local var2 = tonumber(123)
+local var2 = tonumber(1233333213123)
 print(var2) --123
