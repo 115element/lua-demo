@@ -150,6 +150,8 @@ function request(url, method) {
     return data;
 }
 
+
+//返回值：大约是解析域名dname，到ip需要用的时间。这是粗略计算。
 function resolution_time(dname, file) {
     var ts = new Date().getTime();
     var url, i = 0;
@@ -182,7 +184,10 @@ function resolution_time(dname, file) {
 	return -1;
 }
 
-
+//CDN边缘命中下载速率，请求三次，忽略第一次
+//第一次，去掉域名解析为ip时间
+//第二次，保证边缘节点有缓存
+//第三次，基本确认是从边缘缓存节点下载的数据
 function average_speed(dname, file, times, ignore_first) {
     var total_bytes = 0;
     var total_time = 0;
@@ -201,7 +206,7 @@ function average_speed(dname, file, times, ignore_first) {
     }
 
 	total_time /= 1000;
-	return total_time==0?-1:total_bytes/total_time;
+	return total_time==0 ? -1 : total_bytes/total_time;
 }
 
 
@@ -231,20 +236,20 @@ function pass_task_id() {
 	}
 
     if (test_files != null) {
-	    setTimeout(get_provider_ids, 10);
+	    setTimeout(get_provider_ids, 10); //这个里边的函数调用链，也会处理test_urls，因为该函数紧接着return就返回了。
         return;
     }
 
     if (typeof(test_urls) != "undefined") {
         var output = new Array();
-        timer = setInterval(collect_user_data, 10, 0, output, null);
+        timer = setInterval(collect_user_data, 10, 0, output, null); //这个里边的函数调用链，只会处理test_urls。
         return;
     }
 
     upload(null, null);
 }
 
-
+//CDN未缓存回源下载速率(字节/秒)
 function calc_origin_speed(seq, ids, providers) {
 	clearInterval(timer);
 

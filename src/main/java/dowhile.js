@@ -32,9 +32,22 @@ function split_url(url) {
     file = dname.substr(pos+1);
     dname = dname.substring(0, pos);
 
+    console.log("cc")
+
     return {name:dname, uri:file};
 }
 
-var splitUrl = split_url("http://pocketapi.48.cn/banner.jpg");
-console.log(splitUrl)
-console.log(JSON.stringify(splitUrl))
+var s = setTimeout(split_url,1000,"http://pocketapi.48.cn/banner.jpg")
+
+console.log("kkk")
+
+//var splitUrl = split_url("http://pocketapi.48.cn/banner.jpg");
+//console.log(splitUrl)
+//console.log(JSON.stringify(splitUrl))
+
+
+var test_providers = {T2:"t2.test.cy-isp.com",S3:"s3.test.cy-isp.com",G1:"g1.test.cy-isp.com",C3:"c3.test.cy-isp.com",};
+var ids = Object.keys(test_providers);
+console.log(ids)
+console.log(ids[0])
+console.log(test_providers[ids[0]])
