@@ -30,3 +30,8 @@ print(var1) --nil
 
 local var2 = tonumber(1233333213123)
 print(var2) --123
+
+
+
+local r1 = table.concat({ "j", "k", "l"})
+print(r1)

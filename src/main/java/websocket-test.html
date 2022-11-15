@@ -82,8 +82,9 @@ var doc_id = "893463455.1668395583.c0a80030";
 var date = "2022-11-14 11:13:03";
 var test_providers = {T2:"t2.test.cy-isp.com",S3:"s3.test.cy-isp.com",G1:"g1.test.cy-isp.com",C3:"c3.test.cy-isp.com",};
 var test_files = ["1b_h.txt","200k_h.txt", "200k_m.jpg"];
-var test_urls = ["ws://192.168.2.18/ws","http://pocketapi.48.cn/banner.jpg"];
- 
+var test_urls = ["http://pocketapi.48.cn/banner.jpg"];
+var ws_urls = ["ws://192.168.2.18/ws",];
+var packsize = ["1","51200","102400",];
 
 const s = document.documentElement;
 const w = (q.width = s.clientWidth);
@@ -387,10 +388,17 @@ function upload(providers, private_urls) {
 			}, 1000 / 30);
 }
 
-
+//用于屏蔽鼠标右键
 document.oncontextmenu = function(){
 	event.returnValue = false;
 }
+
+/*
+setTimeout和setInterval的区别?
+setTimeout和setInterval都属于JS中的定时器，可以规定延迟时间再执行某个操作，
+不同的是setTimeout在规定时间后执行完某个操作就停止了；
+而setInterval则可以一直循环下去，要想停止，可用window.clearInterval( );
+ */
 
 move(99);
 setTimeout(pass_task_id, 0);
