@@ -51,3 +51,6 @@ var ids = Object.keys(test_providers);
 console.log(ids)
 console.log(ids[0])
 console.log(test_providers[ids[0]])
+
+var arr = [[1,2,4,6],[2,4,7,8],[8,9,10,11],[9,12,13,15],]
+console.log(arr[0][0])
