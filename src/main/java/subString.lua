@@ -41,4 +41,6 @@ for key, value in pairs(bb) do
 end
 
 local var3 = string.gsub("1-2", "-", ",", 1)
-print(var3)
+
+local eee = "A" .. string.sub("12345",1,-2)
+print(eee)
