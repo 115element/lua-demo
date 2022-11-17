@@ -5,9 +5,22 @@
 ---
 
 
-data = 1
-typ = nil
+mymetatable = {}
+mytable = setmetatable({key1 = "value1"}, { __newindex = mymetatable })
 
-if (not data) or (not typ) then
-    print("0000")
-end
+
+print(mytable.key1)
+print("=====================")
+
+mytable.newkey = "新值2"
+print(mytable.newkey)
+print(mytable.newkey)
+print(mymetatable.key1)
+print(mymetatable.newkey)
+
+print("=====================")
+mytable.key1 = "新值1"
+print(mytable.key1)
+print(mymetatable.key1)
+
+
