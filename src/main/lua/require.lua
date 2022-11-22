@@ -1,7 +1,8 @@
---require("module")
---
---print(module.constant)
---module.func3()
+require("module")
+print(module.constant)
+module.func3()
+
+
 
 num = 7
 function toBits(num)
@@ -14,6 +15,7 @@ function toBits(num)
     end
     return t
 end
+
 bits = toBits(num)
 print(table.concat(bits))
 function toBits(num, bits)
@@ -28,7 +30,6 @@ function toBits(num, bits)
 end
 
 s = "123"
-
 for i = 1, #s do
     local var = string.byte(s, i)
     print(var)

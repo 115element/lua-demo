@@ -17,3 +17,11 @@ print(t[2]["addr"])
 print(t[2]["port"])
 
 
+
+
+require("moudle")
+print(module.constant)
+print(type(module.func1)) --function
+module.func3()
+
+
