@@ -15,3 +15,13 @@ for k, v in pairs(ll) do
 end
 
 print(#pp)
+
+xx = {a="b",b="c"}
+for i, v in pairs(xx) do
+    print(i..v)
+end
+
+
+local s = "%22protocol%22:%22http%22"
+pp = string.gsub(s,"%%22","\"")
+print(pp)
